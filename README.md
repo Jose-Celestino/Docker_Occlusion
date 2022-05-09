@@ -2,6 +2,7 @@
 
 A pose estimator that is more robust to face occlusions. The code includes a gRPC server and client example to perform the estimation in images.
 
+DOWNLOAD THE ESTIMATOR MODEL HERE: https://drive.google.com/file/d/19JgO63Zhz0CJ3kdVFr5u4I0xWngc0vSz/view?usp=sharing
 
 ## gRPC Server and Client
 
@@ -14,3 +15,9 @@ If you desire to change the proto file run python -m grpc_tools.protoc -I. --pyt
 This will generate the pb2 and pb2_grpc files.
 
 ## Docker
+
+Open a terminal and type docker run -p 8061:8061 -it --rm josecarlos714/dockerpose:occlusionpose
+
+## Docker Compose 
+
+Go to docker_pipeline folder and run docker-compose up to visualize pose estimation of face images in the images folder.
