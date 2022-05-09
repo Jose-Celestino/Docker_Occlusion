@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+// Service that receives a request, executes requested algorithm on that image
+// and returns the corresponding output
+// :param ExecRequest: The request specifying the algorithm and its inputs
+// :returns: The corresponding output from the algorithm
+service OcclusionPose {
+  rpc Process(Image) returns (PoseResponse);
+}
+
+//Message for 1D arrays of floats
+message Float1DArray {
+  repeated float elems = 1;
+}
+
+//Message for 2D arrays of floats
+message Float2DArray {
+  repeated Float1DArray lines = 1;
+}
+
+//Message for 3D arrays of floats
+message Float3DArray {
+  repeated Float2DArray matrices = 1;
+}
+
+message Image{
+  bytes data = 1;
+}
+
+
+message PoseRequest{
+  bytes image = 1; 
+}
+
+message PoseResponse{
+    bytes image = 1; //Image image = 1;
+    Float2DArray pose = 2;    
+}
+
+
+
