@@ -81,7 +81,7 @@ COPY --chown=${USER}:${GROUP} Latent_model_0,999.pkl ${WORKSPACE}/Latent_model_0
 USER ${USER}
 
 # Expose port 8061 according to ai4eu specifications
-EXPOSE 8062
+EXPOSE 8061
 
 WORKDIR ${WORKSPACE}
 
