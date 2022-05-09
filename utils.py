@@ -126,7 +126,6 @@ def draw_axis(img, yaw, pitch, roll, tdx=None, tdy=None, size = 100):
     return img
 
 
-
 def draw_axis_pil(img, yaw, pitch, roll, tdx=None, tdy=None, size = 100):
 
     pitch = pitch * np.pi / 180
@@ -146,20 +145,13 @@ def draw_axis_pil(img, yaw, pitch, roll, tdx=None, tdy=None, size = 100):
     y1 = size * (cos(pitch) * sin(roll) + cos(roll) * sin(pitch) * sin(yaw)) + tdy
 
     # Y-Axis | drawn in green
-    #        v
     x2 = size * (-cos(yaw) * sin(roll)) + tdx
     y2 = size * (cos(pitch) * cos(roll) - sin(pitch) * sin(yaw) * sin(roll)) + tdy
 
     # Z-Axis (out of the screen) drawn in blue
     x3 = size * (sin(yaw)) + tdx
     y3 = size * (-cos(yaw) * sin(pitch)) + tdy
-
-    #cv2.line(img, (int(tdx), int(tdy)), (int(x1),int(y1)),(255,0,0),3)
-    #cv2.line(img, (int(tdx), int(tdy)), (int(x2),int(y2)),(0,255,0),3)
-    #cv2.line(img, (int(tdx), int(tdy)), (int(x3),int(y3)),(0,0,255),3)
-    #cv2.line(img, (int(tdx), int(tdy)), (int(x1),int(y1)),(0,0,255),3)
-    #cv2.line(img, (int(tdx), int(tdy)), (int(x2),int(y2)),(0,255,0),3)
-    #cv2.line(img, (int(tdx), int(tdy)), (int(x3),int(y3)),(255,0,0),3)
+    
     img = ImageDraw.Draw(img)
     img.line([(int(tdx), int(tdy)), (int(x1),int(y1))], fill='red',width = 4, joint='curve')
     img.line([(int(tdx), int(tdy)), (int(x2),int(y2))], fill='green',width = 4, joint='curve')
