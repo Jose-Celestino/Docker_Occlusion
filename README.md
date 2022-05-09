@@ -16,7 +16,7 @@ This will generate the pb2 and pb2_grpc files.
 
 ## Docker
 
-Open a terminal and type docker run -p 8061:8061 -it --rm josecarlos714/dockerpose:occlusionpose
+Open a terminal and type docker run -p 8061:8061 -it --rm josecarlos714/dockerpose:occlusionpose. This will run a docker container which will deploy the pose estimation server. You can extract the pose using the OcclusionPose_client.py file (an example file) for a given image.
 
 ## Docker Compose 
 
