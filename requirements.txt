@@ -1,0 +1,11 @@
+grpcio
+grpcio-reflection
+protobuf
+numpy
+opencv-python-headless
+matplotlib
+torch
+torchvision
+Pillow
+mediapipe
+scipy
